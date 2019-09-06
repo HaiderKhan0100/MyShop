@@ -11,13 +11,13 @@ namespace MyShop.WebUI.Controllers
 {
     public class ProductManagerController : Controller
     {
-        ProductRepository context;
-        ProductCategoryRepository productCategories;
+        InMemoryRepository<Product> context;
+        InMemoryRepository<ProductCategory> productCategories;
 
         public ProductManagerController()
         {
-            context = new ProductRepository();
-            productCategories = new ProductCategoryRepository();
+            context = new InMemoryRepository<Product>();
+            productCategories = new InMemoryRepository<ProductCategory>();
         }
 
         // GET: ProductManager
@@ -30,9 +30,13 @@ namespace MyShop.WebUI.Controllers
 
         public ActionResult Create()
         {
-            ProductManagerViewModel viewModel = new ProductManagerViewModel();
-            viewModel.Product = new Product();
-            viewModel.ProductCategories = productCategories.Collection();
+            ProductManagerViewModel viewModel = new ProductManagerViewModel()
+            {
+                Product = new Product(),
+                ProductCategories = productCategories.Collection()
+            };
+         //   viewModel.Product = new Product();
+         //   viewModel.ProductCategories = productCategories.Collection();
             return View(viewModel);
         }
 
