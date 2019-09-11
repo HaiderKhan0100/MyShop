@@ -14,7 +14,9 @@ namespace MyShop.WebUI.Controllers
 
         public ProductCategoryManagerController()
         {
-            context = new InMemoryRepository<ProductCategory>();
+             context = new InMemoryRepository<ProductCategory>();
+            
+            
         }
 
         // GET: ProductManager
@@ -25,6 +27,7 @@ namespace MyShop.WebUI.Controllers
             return View(productsCategories);
         }
 
+       
         public ActionResult Create()
         {
             ProductCategory productCategory = new ProductCategory();

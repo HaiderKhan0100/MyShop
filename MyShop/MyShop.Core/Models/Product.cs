@@ -10,7 +10,6 @@ namespace MyShop.Core.Models
    public class Product : BaseEntity
     {
       
-
         [StringLength(20)]
         [Display(Name="Prodcut Name")]
 
@@ -25,8 +24,6 @@ namespace MyShop.Core.Models
 
         public string Image { get; set; }
 
-       
-
-
+   
     }
 }

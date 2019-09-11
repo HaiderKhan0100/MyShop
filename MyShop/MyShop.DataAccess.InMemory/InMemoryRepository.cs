@@ -8,7 +8,7 @@ using MyShop.Core.Models;
 
 namespace MyShop.DataAccess.InMemory
 {
-   public class InMemoryRepository<T> where T : BaseEntity
+    public class InMemoryRepository<T> where T : BaseEntity
     {
         ObjectCache cache = MemoryCache.Default;
         List<T> items;
@@ -47,10 +47,10 @@ namespace MyShop.DataAccess.InMemory
             }
         }
 
-        public T Find( string Id)
+        public T Find(string Id)
         {
             T t = items.Find(i => i.Id == Id);
-            if ( t != null)
+            if (t != null)
             {
                 return t;
 
@@ -59,7 +59,7 @@ namespace MyShop.DataAccess.InMemory
             {
                 throw new Exception(className + " Not found ");
             }
-           
+
         }
 
         public IQueryable<T> Collection()
@@ -79,10 +79,5 @@ namespace MyShop.DataAccess.InMemory
                 throw new Exception(className + " Not found ");
             }
         }
-
-
-
-
-
     }
 }
