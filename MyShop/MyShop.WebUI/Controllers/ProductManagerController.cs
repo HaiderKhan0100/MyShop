@@ -95,6 +95,8 @@ namespace MyShop.WebUI.Controllers
                 productToEdit.Name = product.Name;
                 productToEdit.Price = product.Price;
 
+               // context.Update(productToEdit);
+
                 context.Commit();
 
                 return RedirectToAction("Index");
