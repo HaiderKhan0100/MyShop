@@ -19,6 +19,7 @@ namespace MyShop.WebUI.Controllers
         {
             context = productContext;
             productCategories = productCategoryContext;
+            
         }
 
 
