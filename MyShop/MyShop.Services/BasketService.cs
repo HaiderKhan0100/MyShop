@@ -14,7 +14,7 @@ namespace MyShop.Services
     {
         IRepository<Product> productContext;
         IRepository<Basket> basketContext;
-
+       // public System.Web.Mvc.ControllerContext ControllerContext;
         public const string BasketSessionName = "eCommerceBasket";
 
         public BasketService(IRepository<Product> ProductContext , IRepository<Basket> BasketContext)
